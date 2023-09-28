@@ -1,9 +1,12 @@
 import React from 'react'
+import Login from './components/Login'
 
 function App() {
   return (
-    <div className='bg-slate-800'>Hellooooooooo</div>
-  )
+    <div className='flex justify-center items-center h-screen'>
+    <Login />
+    </div>
+    )
 }
 
 export default App;
