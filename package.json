@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "coverage": "jest --coverage",
-    "dev": "concurrently \"NODE_ENV=development webpack-dev-server --open --hot \" \"nodemon ./server/server.js\"",
+    "dev": "NODE_ENV=development webpack serve --open & NODE_ENV=development nodemon server/server.js",
+    "server": "nodemon server/server.js",
     "start": "webpack-dev-server --mode development --open --hot",
     "lint": "eslint . --fix --max-warnings=0",
     "format": "prettier . --write"

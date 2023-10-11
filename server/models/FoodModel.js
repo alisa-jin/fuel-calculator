@@ -7,18 +7,25 @@ const foodSchema = new Schema({
     type: String,
     required: true
   },
-  company: {
+  brand: {
     type: String,
     required: true
   },
   water: {
     type: Number,
     required: true
+  },
+  category: {
+    type: String,
+    required: false
+  },
+  image: {
+    type: String,
+    required: false
   }
 });
 
 const Food = mongoose.model('Food', foodSchema);
 
 // You must export your model through module.exports
-// The collection name should be 'student'
 module.exports = Food;
