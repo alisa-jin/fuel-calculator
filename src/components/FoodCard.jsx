@@ -1,38 +1,13 @@
 import React from 'react'
 import { useState } from 'react';
 
-function FoodCard({name, brand, image}) {
-
-  // const onSubmit = () => {
-  //   const waterOz = +water
-  //   console.log({name, brand, water: waterOz, image})
-  //   fetch('api/foods/', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({
-  //       name,
-  //       brand,
-  //       water: Number(water),
-  //       image
-  //     })
-  //   })
-  //   .then(data => {
-  //     console.log(data)
-  //   })
-  //   .catch(err => {
-  //     console.log(`Error in creating food: ${err}`)
-  //   })
-  // }
-
-
-
+function FoodCard({name, brand, category, image}) {
   return (
-    <div className = 'flex flex-col'>
-        <h1>{name}</h1>
-        <h2>{brand}</h2>
-        <img src={image}></img>
+    <div className = 'flex flex-col items-center bg-[#FFFFFF] py-4 px-8 rounded-lg shadow-md'>
+        <img className='h-[250px]'src={image}></img>
+        <p>{category}</p>
+        <h3>{brand}</h3>
+        <h4>{name}</h4>
     </div>
   )
 }

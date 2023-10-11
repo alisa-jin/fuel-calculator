@@ -5,6 +5,7 @@ foodController.getFoods = (req, res, next) => {
     Food.find({})
     .then(data => {
         res.locals.allFoods = data;
+        console.log('hihihi', data)
         return next();
     })
     .catch(err => {
