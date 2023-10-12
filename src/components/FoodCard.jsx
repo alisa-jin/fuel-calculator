@@ -21,12 +21,13 @@ function FoodCard({name, brand, category, image}) {
           <p>{name}</p>
       </div>
       {foodAdded ? 
+      (<div className='h-full w-full flex flex-col bg-gray-500 rounded-lg absolute bottom-0 left-0 text-center justify-center opacity-0 hover:opacity-90 transition ease-in-out cursor-pointer'>
+            <p className='text-white text-4xl font-thin'><span className='text-5xl'>+</span><br/>Add to<br/>Backpack</p>
+        </div>) :
       (<div className='h-full w-full flex flex-col bg-gray-500 rounded-lg absolute bottom-0 left-0 text-center justify-center opacity-90 transition ease-in-out cursor-pointer'>
         <p className='text-white text-4xl font-thin'><span className='text-5xl'>&#10003;</span><br/>Added</p>
-      </div>) : 
-      (<div className='h-full w-full flex flex-col bg-gray-500 rounded-lg absolute bottom-0 left-0 text-center justify-center opacity-0 hover:opacity-90 transition ease-in-out cursor-pointer'>
-          <p className='text-white text-4xl font-thin'><span className='text-5xl'>+</span><br/>Add to<br/>Backpack</p>
-      </div>)}
+      </div>) 
+}
 
 
     </div>
