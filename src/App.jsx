@@ -26,7 +26,6 @@ function App() {
 
   return (
     <div className='flex justify-center items-center h-screen bg-[#F5F5F5]'>
-    <Login />
     <FoodCard name='Breakfast Skillet' brand='Mountain House' category='Adventure Meals' image='https://mountainhouse.com/cdn/shop/products/55451-breakfast-skillet-pouch_2000x.jpg?v=1682974230'/>
     </div>
     )
