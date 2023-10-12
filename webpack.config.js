@@ -21,7 +21,13 @@ module.exports = {
             publicPath: '/'
         },
         proxy: {
-            '/': 'http://localhost:3000/'
+            '/api': {
+                target: 'http://localhost:3000',
+                secure: false,
+                changeOrigin: true,
+                rewrite: (path) => path.replace(/^\/api/, ''),
+            },
+            
         }
     },
     module: {
@@ -41,6 +47,14 @@ module.exports = {
                 include: path.resolve(__dirname, 'src'),
                 exclude: /node_modules/,
                 use: ['style-loader', 'css-loader', 'postcss-loader']
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                  {
+                    loader: 'file-loader',
+                  },
+                ],
             },
         ]
     },
