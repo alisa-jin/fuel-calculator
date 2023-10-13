@@ -1,10 +1,12 @@
 import React from 'react'
 import Login from './components/Login'
 import FoodCard from './components/FoodCard';
+import Header from './components/Header'
 import { useEffect, useState } from 'react';
 
 function App() {
   const [foods, setFoods] = useState([])
+  const [totalWater, setTotalWater] = useState(0);
 
   useEffect(() => {
     fetch('api/foods/', {
@@ -26,9 +28,11 @@ function App() {
   // )
 
   return (
-    <div className='flex justify-center items-center h-screen bg-[#F5F5F5]'>
-    <FoodCard name='Breakfast Skillet' brand='Mountain House' category='Adventure Meals' image='https://mountainhouse.com/cdn/shop/products/55451-breakfast-skillet-pouch_2000x.jpg?v=1682974230'/>
-    {foods.map(food => <FoodCard name={food.name} brand={food.brand} category={food.category} image={food.image} />)}
+    <div>
+      <h1>Water Amount: {totalWater}</h1>
+      <div className='flex justify-center items-center h-screen bg-[#F5F5F5] gap-3 flex-wrap'>
+      {foods.map(food => <FoodCard key={food._id} name={food.name} brand={food.brand} category={food.category} image={food.image} water={food.water} totalWater={totalWater} setTotalWater={setTotalWater}/>)}
+      </div>
     </div>
     )
 }
