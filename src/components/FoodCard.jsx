@@ -1,9 +1,7 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, useParams} from 'react';
 import backpack from '../images/backpack.png'
 import FoodAdded from '../FoodAdded';
-import { set } from 'mongoose';
-
 
 // ON HOVER --> OVERLAY OF ADD TO PACKPACK IMAGE?
 
@@ -11,15 +9,13 @@ import { set } from 'mongoose';
 // another div that once added is overlayed on food item --> hover will change content
 
 
-function FoodCard({name, brand, category, image, water, totalWater, setTotalWater}) {
+function FoodCard({name, brand, category, image, water}) {
   const [foodAdded, setFoodAdded] = useState('false');
   const [qty, setQty] = useState(0);
-
   const waterUpdate = () => {
-    foodAdded ? setTotalWater(totalWater + water) : setTotalWater(totalWater - water)
+    foodAdded ? console.log(`+ ${water}`) : console.log(`- ${water}`);
     setFoodAdded(!foodAdded);
   }
-
 
   return (
     <div className='food-container relative max-h-[350px] max-w-[315px]' onClick={()=>waterUpdate()}>
